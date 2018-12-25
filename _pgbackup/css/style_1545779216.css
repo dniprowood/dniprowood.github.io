@@ -74,7 +74,7 @@ main {
     border-radius: 7px;
     overflow: hidden;
     transition: all 0.3s ease 0.5s;
-    box-shadow: 0 0 0 0 rgba(30, 143, 54, 0.74);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .form__cover:after {
@@ -125,7 +125,7 @@ body.document-loaded .form__content {
 }
 
 body.document-loaded .form__cover {
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 body.document-loaded .form__cover:after {
@@ -167,7 +167,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 0.1em;
-    background: #fff7f7 2;
+    background: #0050 2;
     transition: all 4.3s ease;
     overflow: hidden;
 }
@@ -204,7 +204,7 @@ h1 {
 }
 
 .styled-button__moving-block.back {
-    color: #ffffff;
+    color: white;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
 }
