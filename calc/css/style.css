@@ -1,3 +1,4 @@
+
 .service-level-section {
     display: -ms-flexbox;
     display: flex;
@@ -8,7 +9,6 @@
 
 .service-level-col {
     border: 1px solid #bfbfbf;
-
     /*cursor: pointer;*/
     color: #ffffff;
 }
@@ -93,12 +93,12 @@
 }
 
 .estimation-input-row {
-    margin-top: 50px;
-    display: flex;
-    width: 700px;
-    justify-content: space-between;
+  margin-top: 50px;
+  display: flex;
+  width: 700px;
+  justify-content: space-between;
 }
 
 .calc-range {
-    width: 300px;
+  width: 300px;
 }

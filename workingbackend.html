@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>Menu Items</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="app">
+            <h1>Menu Items</h1>
+            <ul>
+                <li v-for="item in items" class="grey-text text-darken-3 lighten-5 z-depth-1 hoverable waves-effect indigo waves-teal shadow bg-secondary">
+                    <h5 class="indigo-text text-darken-1" data-target="hello">{{ item['fields']['name'] }}</h5>
+                    <p><strong>Price: </strong><span class="price">${{ item['fields']['original unit price'] }}</span></p>x 
+                    <input v-model="item['fields']['count']"/> = ${{ calculatePrice( item['fields']['original unit price'], item['fields']['count']) }}
+                    <img :src="item['fields']['picture'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['picture']" width="150">
+                </li>
+            </ul>
+        </div>
+        <!--app-->
+        <!-- Include Dependancy Scripts -->
+        <script type="text/javascript" src="https://unpkg.com/vue"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    items: []
+                },
+                mounted: function(){
+                   this.loadItems();
+                },
+                methods: {
+                    loadItems: function(){
+
+                        // Init variables
+                        var self = this
+                        var app_id = "appPwNJoRVZ7Vvf1W";
+                        var app_key = "keyeG48OaBtxoEPwz";
+                        this.items = []
+
+                        axios.get(
+                            "https://api.airtable.com/v0/appPwNJoRVZ7Vvf1W/tbllcYAWpseq94wYe?",
+                            {
+                                headers: { Authorization: "Bearer "+app_key }
+                            }
+                        ).then(function(response){
+                            self.items = response.data.records
+                        }).catch(function(error){
+                            console.log(error)
+                        })
+                    },
+                     calculatePrice: function(price, count){
+                        //debugger;
+                        var endPrice = price * (count || 0)
+                        var percent  = endPrice / 100
+                        if(count < 30 && count > 25){
+                            endPrice += percent * 15 
+                        }else if(count < 25 && count > 20){
+                            endPrice += percent * 20 
+                        }else if(count < 20 && count > 15){
+                            endPrice += percent * 25 
+                        }else if(count < 15){
+                            endPrice += percent * 30 
+                        }
+                        return Math.round( endPrice )
+                    },
+                }
+            })
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    </body>
+    <style>h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+li {
+    width: 170px;
+    background: #e6e6e6;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    margin: 13px;
+}</style>
+</html>
