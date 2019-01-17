@@ -1,0 +1,32 @@
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+header {
+  height: 80px;
+}
+header nav {
+  float: right;
+  margin-top: 30px;
+}
+
+a {
+  margin-right: 30px;
+}
+
+.container {
+  margin: 50px 0 0 30px;
+}
+
+.subroute {
+  margin: 30px 50px 0 0;
+  padding: 20px;
+}
+
+.v-transition {
+  transition: opacity .1s ease-out;
+}
+
+.v-enter, .v-leave {
+  opacity: 0;
+}

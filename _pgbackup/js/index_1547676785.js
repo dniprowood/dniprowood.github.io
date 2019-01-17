@@ -1,6 +1,3 @@
-	const axios = require('axios');
-	module.exports = function(context, cb) {
-	};
 var
 placeholders = document.querySelectorAll('.styled-input__placeholder-text'),
 inputs = document.querySelectorAll('.styled-input__input');

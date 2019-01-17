@@ -1,6 +1,22 @@
-	const axios = require('axios');
-	module.exports = function(context, cb) {
-	};
+var app = new Vue({
+  el: '#app',
+  data: {
+    user: false
+  },
+  methods: {
+    login: function() {
+      
+      fetch()
+      this.user = {
+        name: 'Dave Rupert'
+      };
+    },
+    signout: function() {
+      this.user = false;
+    }
+  }
+});
+
 var
 placeholders = document.querySelectorAll('.styled-input__placeholder-text'),
 inputs = document.querySelectorAll('.styled-input__input');

@@ -12,7 +12,7 @@
                 <li v-for="item in items" class="grey-text text-darken-3 lighten-5 z-depth-1 hoverable waves-effect indigo waves-teal shadow bg-secondary">
                     <h5 class="indigo-text text-darken-1" data-target="hello">{{ item['fields']['name'] }}</h5>
                     <p><strong>Price: </strong><span class="price">${{ item['fields']['original unit price'] }}</span></p>x 
-                    <input v-model="item['fields']['count']"/> = ${{ calculatePrice( item['fields']['original zunit price'], item['fields']['count']) }}
+                    <input v-model="item['fields']['count']"/> = ${{ calculatePrice( item['fields']['original unit price'], item['fields']['count']) }}
                     <img :src="item['fields']['picture'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['picture']" width="150">
                 </li>
             </ul>

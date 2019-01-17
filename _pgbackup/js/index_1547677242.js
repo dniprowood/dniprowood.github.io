@@ -1,6 +1,28 @@
-	const axios = require('axios');
-	module.exports = function(context, cb) {
-	};
+import { required, minLength } from 'vuelidate/lib/validators'
+
+export default {
+  data() {
+    return {
+      form: {
+        userName: '',
+        password: ''
+      }
+    }
+  },
+  validations: {
+    form: {
+      userName: {
+        required,
+        minLength: minLength(5)
+      },
+      password: {
+        required,
+        minLength: minLength(8)
+      }
+    }
+  }
+}
+
 var
 placeholders = document.querySelectorAll('.styled-input__placeholder-text'),
 inputs = document.querySelectorAll('.styled-input__input');

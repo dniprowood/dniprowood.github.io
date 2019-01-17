@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue Router</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="menu">
+            <header>
+                <nav>
+                    <a v-link="{ path: '/about' }">About</a>
+                    <a v-link="{ path: '/work' }">Work</a>
+                    <a v-link="{ path: '/contact' }">Contact</a>
+                </nav>
+            </header>
+            <div class="container">
+                <router-view transition transition-mode="out-in"></router-view>
+            </div>
+            <template id="about-component-template">
+                <div>
+                    <h1>This is the About Section!</h1>
+                </div>
+            </template>
+            <template id="work-component-template">
+                <div class="work">
+                    <h1>This is the Work Section!</h1>
+                    <a v-link="{ path: '/work/subroute1' }">View SubRoute 1</a>
+                    <a v-link="{ path: '/work/subroute2' }">View SubRoute 2</a>
+                    <!-- Read about "transition mode" here: https://vuejs.org/guide/components.html#transition-mode -->
+                    <router-view transition transition-mode="out-in"></router-view>
+                </div>
+            </template>
+            <template id="subroute-component-template">
+                <div class="subroute" :style="{ background: color }">
+                    <p>Hey there. You've reached Work subRoute {{ number }}</p>
+                </div>
+            </template>
+            <template id="contact-component-template">
+                <div>
+                    <h1>This is the Contact Section!</h1>
+                </div>
+            </template>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.11/vue-router.min.js'></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

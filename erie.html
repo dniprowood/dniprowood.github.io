@@ -4,16 +4,21 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link href="file:///Users/yuribondarenko/Desktop/html%20killah/material-form(gagarin)/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id="app">
-            <h1>Menu Items</h1>
+            <h1>ERIE</h1>
             <ul>
-                <li v-for="item in items" class="grey-text text-darken-3 lighten-5 z-depth-1 hoverable waves-effect indigo waves-teal shadow bg-secondary">
-                    <h5 class="indigo-text text-darken-1" data-target="hello">{{ item['fields']['name'] }}</h5>
-                    <p><strong>Price: </strong><span class="price">${{ item['fields']['original unit price'] }}</span></p>x 
-                    <input v-model="item['fields']['count']"/> = ${{ calculatePrice( item['fields']['original unit price'], item['fields']['count']) }}
-                    <img :src="item['fields']['picture'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['picture']" width="150">
+                <li v-for="item in items" class="z-depth-1 waves-effect shadow transparent lighten-4 waves-light hoverable border border-success" style="height: auto; letter-spacing: 0px; text-align: justify;">
+                    <h5 class="indigo-text text-darken-1" style="text-align: left; font-weight: normal;">{{ item['fields']['name'] }}</h5>
+                    <p style="text-align: left; grid-area: 3 / 1 / 3 / 2; height: -157px;"><span class="price" style="font-size: 36px;">{{ item['fields']['original unit price'] }}</span></p>
+                    <p style="grid-area:4 / 1 / 3 / 2;">quantity</p>
+                    <input v-model="item['fields']['count']" style="grid-area:3 / 1 / 3 / 2;">
+                    &nbsp;innvoice Price:&nbsp; {{ calculatePrice( item['fields']['original unit price'], item['fields']['count']) }}
+                    <p>  </p>
+                    <img :src="item['fields']['picture'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['picture']" width="" style="/* object-fit: fill */
+margin-bottom: 10px; padding-bottom: 4px; top: 44px;">
                 </li>
             </ul>
         </div>
@@ -67,6 +72,7 @@
                     },
                 }
             })
+               var hapiAirtableAuthenticationPlugin = require("@draftbit/hapi-airtable-authentication-plugin")
         </script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -78,16 +84,16 @@
 }
 
 ul {
-    list-style-type: none;
+    list-style-type: NONE;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: AUTO;
     flex-wrap: wrap;
 }
 
 li {
-    width: 170px;
+    width: AUTO;
     background: #e6e6e6;
     border-radius: 15px;
     padding: 15px;
