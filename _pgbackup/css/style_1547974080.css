@@ -1,5 +1,5 @@
 html {
-    font-size: calc(4px + 2vmin);
+    font-size: calc(8px + 2vmin);
     line-height: 138%;
     font-family: sans-serif;
     background: white;
@@ -10,18 +10,11 @@ body * {
     display: block;
     background: none;
     box-sizing: border-box;
-    color: #00ffa5;
+    color: #883e3e;
     margin: 0;
     border: 0;
     padding: 0;
     outline: 0;
-    border-radius: 8px 9px 9px 5px;
-    font-size: 18px;
-    text-transform: uppercase;
-    line-height: -15px;
-    font-weight: 500;
-    background-size: auto;
-    text-align: center;
 }
 
 style,
@@ -74,21 +67,20 @@ form {
     align-items: flex-start;
     width: 16rem;
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 form * + * {
     margin-top: 1rem;
 }
 
-form header h1 {
-    color: rgba(0, 10, 0, 0.8);
+form header h3 {
+    color: rgba(0, 0, 0, 0.8);
 }
 
 form header p {
-    font-size: 1rem;
+    font-size: .8rem;
     color: rgba(0, 0, 0, 0.5);
-    line-height: 160%;
+    line-height: 150%;
 }
 
 form footer > * + * {
@@ -120,34 +112,30 @@ form input {
     padding-left: 0;
     font-size: 1rem;
     border-bottom: 2px solid rgba(0, 0, 0, 0.12);
-    background: rgba(0, 255, 207, 0.38);
+    background: #fff;
     border-radius: 0;
-    color: rgba(0, 60, 20, 10.5);
+    color: rgba(0, 60, 20, 0.5);
 }
 
 form input:focus {
-    border-bottom: 3px solid #4285f4;
+    border-bottom: 4px solid #4285f4;
 }
 
 form button[type='submit'] {
     padding: .5rem;
-    width: 100%;
+    width: auto;
     font-size: .62rem;
     text-transform: uppercase;
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    background-color: transparent;
+    background-color: #1e88e5;
     color: #fff;
-    transition: box-shadow .4s;
+    transition: box-shadow .2s;
+    border-radius: 2px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.39);
-}
-
-form button:hover {
-    background-color: rgba(0, 255, 165, 0.32);
 }
 
 form button[type='submit']:hover,
 form button[type='submit']:focus {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.39);
-}
 }

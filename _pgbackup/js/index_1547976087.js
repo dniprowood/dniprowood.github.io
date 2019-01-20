@@ -14,7 +14,7 @@ const main =
         // Only shows when authenticated
         state.auth.authed &&
          h('section', {}, [
-           h('h2', {}, 'You made it!'),
+           h('h1', {}, 'You made it!'),
            h('p', {}, state.auth.user.email),
            h('button', { onclick: actions.auth.signout }, 'Sign Out'),
          ]),

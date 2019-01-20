@@ -1,1 +1,0 @@
-This is a sample app that demonstrates integration of Stitch, google auth, and react.js.
