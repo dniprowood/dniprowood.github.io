@@ -6,9 +6,29 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="mySketch.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js" type="text/javascript"></script>
+        <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.1.1/stitch.js"></script>
     </head>
     <body>
         <main>
+          <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.1.1/stitch.js"></script>
+<script>
+  const client = stitch.Stitch.initializeDefaultAppClient('dniprowood-xpykq');
+
+  const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb1').db('<users>');
+
+  client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user =>
+    db.collection('<users>').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
+  ).then(() =>
+    db.collection('<users>').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
+  ).then(docs => {
+      console.log("Found docs", docs)
+      console.log("[MongoDB Stitch] Connected to Stitch")
+  }).catch(err => {
+    console.error(err)
+  });
+</script>
+
+
             <form class="form">
                 <div class="form__cover"></div>
                 <div class="form__loader">
