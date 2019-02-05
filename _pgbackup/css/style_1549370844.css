@@ -10,7 +10,7 @@ body * {
     display: block;
     background: none;
     box-sizing: 100%;
-    color: #53f3ba;
+    color: #00ffa5;
     margin: 0;
     border: 0;
     padding: 0;
@@ -54,7 +54,7 @@ section > * + * {
 
 section button {
     font-size: .62rem;
-    border: 1px solid rgba(220, 196, 196, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     padding: .5rem;
 }
 
