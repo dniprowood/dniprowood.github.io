@@ -14,7 +14,7 @@ const main =
         // Only shows when authenticated
         state.auth.authed &&
          h('section', {}, [
-           h('link', {}, 'https://dniprowood.github.io/erie'),
+           h('link', {click}, 'https://dniprowood.github.io/erie'),
            h('p', {}, state.auth.user.email),
            h('button', { onclick: actions.auth.signout }, 'Sign Out'),
          ]),

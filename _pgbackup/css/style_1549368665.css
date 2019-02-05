@@ -2,7 +2,7 @@ html {
     font-size: calc(4px + 2vmin);
     line-height: 138%;
     font-family: sans-serif;
-    background: grey;
+    background: white;
 }
 
 body,
@@ -74,7 +74,7 @@ form {
     align-items: flex-start;
     width: 16rem;
     margin: auto;
-    background-color: grey;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 form * + * {

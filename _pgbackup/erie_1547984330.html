@@ -1,6 +1,5 @@
 <html>
     <head>
-        <meta charset="UTF-8">
         <title>Menu Items</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
@@ -13,13 +12,13 @@
             <ul>
                 <li v-for="item in items" class="z-depth-1 waves-effect shadow transparent lighten-4 waves-light hoverable border border-success" style="height: auto; letter-spacing: 0px; text-align: justify;">
                     <h5 class="indigo-text text-darken-1" style="text-align: left; font-weight: normal;">{{ item['fields']['name'] }}</h5>
-                    <p style="text-align: left; grid-area: 3 / 1 / 3 / 2; height: -157px;"><span class="price" style="font-size: 36px;">€{{ item['fields']['original unit price'] }}</span></p>
+                    <p style="text-align: left; grid-area: 3 / 1 / 3 / 2; height: -157px;"><span class="price" style="font-size: 36px;">{{ item['fields']['original unit price'] }}</span></p>
                     <p style="grid-area:4 / 1 / 3 / 2;">quantity</p>
                     <input v-model="item['fields']['count']" style="grid-area:3 / 1 / 3 / 2;">
-                    &nbsp;invoice Price:&nbsp; {{ calculatePrice( item['fields']['original unit price'], item['fields']['count']) }}
+                    &nbsp;innvoice Price:&nbsp; {{ calculatePrice( item['fields']['original unit price'], item['fields']['count']) }}
                     <p> </p>
                     <img :src="item['fields']['picture'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['picture']" width="" style="/* object-fit: fill */
-margin-bottom: 10px; padding-bottom: 4px; top: 44px; max-width: 488px;">
+margin-bottom: 10px; padding-bottom: 4px; top: 44px;">
                 </li>
             </ul>
         </div>
