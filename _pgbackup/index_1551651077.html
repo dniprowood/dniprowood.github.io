@@ -1,0 +1,36 @@
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Client authorization</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="mySketch.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js" type="text/javascript"></script>
+    <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.1.1/stitch.js"></script>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>client-auth</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+        <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyChsMerkDkaYXg7zl6NI_dcKmPaVf3JSeA",
+    authDomain: "tiamo-349b5.firebaseapp.com",
+    databaseURL: "https://tiamo-349b5.firebaseio.com",
+    projectId: "tiamo-349b5",
+    storageBucket: "tiamo-349b5.appspot.com",
+    messagingSenderId: "465891072468"
+  };
+  firebase.initializeApp(config);
+</script>
+        <script src="https://unpkg.com/hyperapp"></script>
+        <script src="https://unpkg.com/hyperapp-firebase-auth"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

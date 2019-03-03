@@ -17,7 +17,6 @@ const main =
            h('link', {}, 'https://dniprowood.github.io/erie'),
            h('p', {}, state.auth.user.email),
            h('button', { onclick: actions.auth.signout }, 'Sign Out'),
-           h('button', {}, 'Show ERIE'),
          ]),
       ]),
     document.body

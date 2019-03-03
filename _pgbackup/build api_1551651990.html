@@ -3,23 +3,25 @@
         <title>Menu Items</title>
     </head>
     <body>
-        <div id="app">
+
+<div id="app">
             <h1>Menu Items</h1>
             <ul>
                 <li v-for="item in items">
-                    <h3>{{ item['fields']['size'] }}</h3>
+                    <h3>{{ item['fields']['name'] }}</h3>
                     <p>{{ item['fields']['quantity'] }}</p>
                     <p><strong>Price: </strong>${{ item['fields']['Invoice price'] }}</p>
                     <p><strong>extra%: </strong>{{ item['fields']['extra'] }}</p>
                     <img :src="item['fields']['picture'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['picture']" width="150">
                 </li>
             </ul>
-        </div>
-        <!--app-->
+        </div><!--app-->
+
         <!-- Include Dependancy Scripts -->
         <script type="text/javascript" src="https://unpkg.com/vue"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
-        <script type="text/javascript">
+
+<script type="text/javascript">
             var app = new Vue({
                 el: '#app',
                 data: {
@@ -52,25 +54,26 @@ axios.get(
             })
         </script>
     </body>
-    <style>h1 {
-    text-align: center;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-li {
-    width: 250px;
-    background: #e6e6e6;
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    margin: 50px;
-}</style>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        li {
+            width: 250px;
+            background: #e6e6e6;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            margin: 50px;
+        }
+       
+    </style>
 </html>
